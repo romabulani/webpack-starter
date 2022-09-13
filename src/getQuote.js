@@ -8,7 +8,6 @@ const getQuote = async () => {
   };
   try {
     const res = await axios.get("https://api.quotable.io/random", config);
-    console.log(res);
     document.getElementById("quote").innerHTML = res.data.content;
   } catch (e) {
     console.error(e);
