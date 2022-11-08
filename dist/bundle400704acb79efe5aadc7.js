@@ -42,23 +42,22 @@ var getQuote = /*#__PURE__*/function () {
 
           case 4:
             res = _context.sent;
-            console.log(res);
             document.getElementById("quote").innerHTML = res.data.content;
-            _context.next = 13;
+            _context.next = 12;
             break;
 
-          case 9:
-            _context.prev = 9;
+          case 8:
+            _context.prev = 8;
             _context.t0 = _context["catch"](1);
             console.error(_context.t0);
             document.getElementById("quote").innerHTML = "An apple a day keeps the doctor away!";
 
-          case 13:
+          case 12:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[1, 9]]);
+    }, _callee, null, [[1, 8]]);
   }));
 
   return function getQuote() {
@@ -382,4 +381,4 @@ module.exports = __webpack_require__.p + "smiley.svg";
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=bundlea52a73adf4082cf88758.js.map
+//# sourceMappingURL=bundle400704acb79efe5aadc7.js.map
