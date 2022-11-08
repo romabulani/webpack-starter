@@ -11,6 +11,8 @@ Dist folder of website is deployed [here](https://romabulani.github.io/webpack-s
 - Image Asset
 - HtmlWebpackPlugin - Helps in creation of HTML File
 - Caching and Code Splitting
+- Lazy Loading
+- Degit
 
 ## How is Caching working
 
