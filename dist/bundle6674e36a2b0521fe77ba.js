@@ -42,23 +42,22 @@ var getQuote = /*#__PURE__*/function () {
 
           case 4:
             res = _context.sent;
-            console.log(res);
             document.getElementById("quote").innerHTML = res.data.content;
-            _context.next = 13;
+            _context.next = 12;
             break;
 
-          case 9:
-            _context.prev = 9;
+          case 8:
+            _context.prev = 8;
             _context.t0 = _context["catch"](1);
             console.error(_context.t0);
             document.getElementById("quote").innerHTML = "An apple a day keeps the doctor away!";
 
-          case 13:
+          case 12:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[1, 9]]);
+    }, _callee, null, [[1, 8]]);
   }));
 
   return function getQuote() {
@@ -83,7 +82,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-document.getElementById("quoteBtn").addEventListener("click", _getQuote__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+function loadLodash() {
+  __webpack_require__.e(/*! import() */ "vendor").then(__webpack_require__.t.bind(__webpack_require__, /*! lodash */ "./node_modules/lodash/lodash.js", 23)).then(function (module) {
+    document.getElementById("lodashText").innerText = "Lodash loaded!!";
+    setTimeout(function () {
+      document.getElementById("lodashText").innerText = "";
+    }, 8000);
+  })["catch"](function (e) {
+    return console.log("Failed to import lodash", e);
+  });
+}
+
+document.getElementById("quoteBtn").addEventListener("click", function () {
+  (0,_getQuote__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  loadLodash();
+});
 var smileyImg = document.getElementById("smileyImg");
 smileyImg.src = _assets_smiley_svg__WEBPACK_IMPORTED_MODULE_2__;
 (0,_getQuote__WEBPACK_IMPORTED_MODULE_1__["default"])();
@@ -195,12 +209,15 @@ module.exports = __webpack_require__.p + "smiley.svg";
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
 /******/ 			id: moduleId,
-/******/ 			// no module.loaded needed
+/******/ 			loaded: false,
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -254,6 +271,36 @@ module.exports = __webpack_require__.p + "smiley.svg";
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/create fake namespace object */
+/******/ 	(() => {
+/******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
+/******/ 		var leafPrototypes;
+/******/ 		// create a fake namespace object
+/******/ 		// mode & 1: value is a module id, require it
+/******/ 		// mode & 2: merge all properties of value into the ns
+/******/ 		// mode & 4: return value when already ns object
+/******/ 		// mode & 16: return value when it's Promise-like
+/******/ 		// mode & 8|1: behave like require
+/******/ 		__webpack_require__.t = function(value, mode) {
+/******/ 			if(mode & 1) value = this(value);
+/******/ 			if(mode & 8) return value;
+/******/ 			if(typeof value === 'object' && value) {
+/******/ 				if((mode & 4) && value.__esModule) return value;
+/******/ 				if((mode & 16) && typeof value.then === 'function') return value;
+/******/ 			}
+/******/ 			var ns = Object.create(null);
+/******/ 			__webpack_require__.r(ns);
+/******/ 			var def = {};
+/******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
+/******/ 			for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
+/******/ 				Object.getOwnPropertyNames(current).forEach((key) => (def[key] = () => (value[key])));
+/******/ 			}
+/******/ 			def['default'] = () => (value);
+/******/ 			__webpack_require__.d(ns, def);
+/******/ 			return ns;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -264,6 +311,14 @@ module.exports = __webpack_require__.p + "smiley.svg";
 /******/ 				}
 /******/ 			}
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/ensure chunk */
+/******/ 	(() => {
+/******/ 		// The chunk loading function for additional chunks
+/******/ 		// Since all referenced chunks are already included
+/******/ 		// in this file, this function is empty here.
+/******/ 		__webpack_require__.e = () => (Promise.resolve());
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -291,6 +346,15 @@ module.exports = __webpack_require__.p + "smiley.svg";
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/node module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nmd = (module) => {
+/******/ 			module.paths = [];
+/******/ 			if (!module.children) module.children = [];
+/******/ 			return module;
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -382,4 +446,4 @@ module.exports = __webpack_require__.p + "smiley.svg";
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=bundlea52a73adf4082cf88758.js.map
+//# sourceMappingURL=bundle6674e36a2b0521fe77ba.js.map
